@@ -1,6 +1,6 @@
 <%--Servlet:用id获得单条通知详细--%>
-<%@ page import="notice.MyNoticeEntity" %>
-<%@ page import="notice.ManageNotice" %>
+<%@ page import="skc.notice.MyNoticeEntity" %>
+<%@ page import="skc.notice.ManageNotice" %>
 <%--
   Created by Intellij IDEA.
   User: WuHaoLin

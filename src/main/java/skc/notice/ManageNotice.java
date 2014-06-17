@@ -1,4 +1,4 @@
-package notice;
+package skc.notice;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -7,8 +7,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import tool.AutoUpdate;
-import tool.HibernateUtil;
+import skc.tool.AutoUpdate;
+import skc.tool.HibernateUtil;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -95,8 +95,8 @@ public class ManageNotice {
 	/**
 	 * 判断管理员密码是否正确
 	 *
-	 * @param password
-	 * @return
+	 * @param password 登入者输入的密码
+	 * @return 密码是否正确
 	 */
 	public static boolean managePasswordIsOK(String password) {
 		return password.equals(ManagePassword);
@@ -105,7 +105,7 @@ public class ManageNotice {
 	/**
 	 * 判断数据库中是否含有该标题的文章而且时间相同
 	 *
-	 * @param title
+	 * @param title 一篇文章的标题
 	 * @return 如果有返回true
 	 */
 	public static boolean DBhasThisOne(String title, String date) {
@@ -187,7 +187,6 @@ public class ManageNotice {
 	 * 用于分页查询加fromSite条件查询
 	 *
 	 * @param from 从这个开始
-	 * @param size 拿出多少个
 	 * @return
 	 */
 	public static List<MyNoticeEntity> get_fromSite_page(int from,String fromSite) {
@@ -208,7 +207,6 @@ public class ManageNotice {
 	 * 用于分页查询加关键字搜索
 	 *
 	 * @param from 从这个开始
-	 * @param size 拿出多少个
 	 * @return
 	 */
 	public static List<MyNoticeEntity> search_page(int from,String want) {
@@ -228,7 +226,6 @@ public class ManageNotice {
 	 * 用于分页查询
 	 *
 	 * @param from 从这个开始
-	 * @param size 拿出多少个
 	 * @return
 	 */
 	public static List<MyNoticeEntity> get_page(int from) {
@@ -244,7 +241,6 @@ public class ManageNotice {
 	/**
 	 * 对从html里提起到的文章的原链接进行检查处理,如果他包含http即是完整的url就原样返回.如果不是完整的url即不包含http://就求得原url然后返回
 	 *
-	 * @param orgUrl   从html里提起到的文章的原链接
 	 * @param BasicUrl 该文章来源网站的根URL
 	 * @return
 	 */
@@ -299,7 +295,6 @@ public class ManageNotice {
 	 * 判断该文章是否符合是重要通知的要求
 	 * 看该文章的标题是否含有筛选关键字FilterString[],如果有就认为该文章符合要求
 	 *
-	 * @param link 一篇文章的链接
 	 * @return
 	 */
 	public static boolean isNotice(String title) {

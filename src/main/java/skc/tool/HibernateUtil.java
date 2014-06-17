@@ -1,4 +1,4 @@
-package tool;
+package skc.tool;
 
 /**
  * Created with Intellij IDEA.

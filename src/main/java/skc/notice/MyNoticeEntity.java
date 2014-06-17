@@ -1,6 +1,6 @@
-package notice;
+package skc.notice;
 
-import tool.Tool;
+import skc.tool.Tool;
 
 import javax.persistence.*;
 

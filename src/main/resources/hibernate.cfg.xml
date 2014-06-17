@@ -49,7 +49,7 @@
 
 		<!-- 以下设置对象与数据库表的映像文件 -->
 		<!--重要通知-->
-		<mapping resource="MynoticeEntity.hbm.xml" class="notice.MyNoticeEntity"/>
+		<mapping resource="MynoticeEntity.hbm.xml" class="skc.notice.MyNoticeEntity"/>
 
 	</session-factory>
 

@@ -1,4 +1,4 @@
-package tool;
+package skc.tool;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

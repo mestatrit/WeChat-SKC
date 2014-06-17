@@ -1,7 +1,7 @@
 <%--通知列表里获得AJAX通知--%>
 <%@ page import="java.util.List" %>
-<%@ page import="notice.MyNoticeEntity" %>
-<%@ page import="notice.ManageNotice" %>
+<%@ page import="skc.notice.MyNoticeEntity" %>
+<%@ page import="skc.notice.ManageNotice" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 	// 将请求、响应的编码均设置为UTF-8（防止中文乱码）

@@ -1,4 +1,4 @@
-<%@ page import="notice.ManageNotice" %>
+<%@ page import="skc.notice.ManageNotice" %>
 <%--
   Created by Intellij IDEA.
   User: WuHaoLin

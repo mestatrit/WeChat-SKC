@@ -1,5 +1,5 @@
-<%@ page import="notice.ManageNotice" %>
-<%@ page import="notice.MyNoticeEntity" %>
+<%@ page import="skc.notice.ManageNotice" %>
+<%@ page import="skc.notice.MyNoticeEntity" %>
 <%--
   Created by Intellij IDEA.
   User: WuHaoLin

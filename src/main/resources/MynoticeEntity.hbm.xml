@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-	<class name="notice.MyNoticeEntity" table="mynotice" schema="" catalog="skc">
+	<class name="skc.notice.MyNoticeEntity" table="mynotice" schema="" catalog="skc">
 		<id name="id">
 			<column name="id" sql-type="int" length="10" not-null="true"/>
 		</id>

@@ -1,6 +1,6 @@
 <%--搜索功能的结果展示页--%>
-<%@ page import="notice.ManageNotice" %>
-<%@ page import="tool.Tool" %>
+<%@ page import="skc.notice.ManageNotice" %>
+<%@ page import="skc.tool.Tool" %>
 <%--通知列表--%>
 <%--
   Created by Intellij IDEA.
