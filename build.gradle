@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+version='1.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies() {
+
+    //SQL
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '4.3.5.Final'
+    compile 'mysql:mysql-connector-java:5.1.23'
+
+    //Jsoup
+    compile 'org.jsoup:jsoup:1.7.3'
+
+    //Servlet3.0
+    compile 'javax.servlet:servlet-api:3.0-alpha-1'
+
+    //Junit
+    testCompile 'junit:junit:4.11'
+
+}

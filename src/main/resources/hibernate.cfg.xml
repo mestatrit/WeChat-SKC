@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<!--编码为UTF8-->
+		<property name="connection.useUnicode">true</property>
+		<property name="connection.characterEncoding">UTF8</property>
+
+		<!-- 数据库连接驱动 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+		<!--数据库连接URL-->
+		<property name="connection.url">jdbc:mysql://localhost:3306/skc</property>
+
+		<!--数据库帐号-->
+		<property name="connection.username">root</property>
+
+		<!--数据库密码-->
+		<property name="connection.password">ccnuyouth</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">
+			10
+		</property>
+
+		<!-- SQL 方言-->
+		<property name="dialect">
+			org.hibernate.dialect.MySQLInnoDBDialect
+		</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">
+			thread
+		</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">
+			false
+		</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">
+			update
+		</property>
+
+		<!-- 以下设置对象与数据库表的映像文件 -->
+		<!--重要通知-->
+		<mapping resource="MynoticeEntity.hbm.xml" class="notice.MyNoticeEntity"/>
+
+	</session-factory>
+
+</hibernate-configuration>
