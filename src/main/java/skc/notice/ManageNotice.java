@@ -242,12 +242,11 @@ public class ManageNotice {
 	 * 对从html里提起到的文章的原链接进行检查处理,如果他包含http即是完整的url就原样返回.如果不是完整的url即不包含http://就求得原url然后返回
 	 *
 	 * @param BasicUrl 该文章来源网站的根URL
-	 * @return
 	 */
 	private static String checkURL(Element link, String BasicUrl) {
 		String orgUrl = link.attr("href");//原地址
-		if (!orgUrl.contains("http://")) {//处理不合法的源地址使其变为合法的
-			orgUrl = BasicUrl + link.attr("href").replace("src/main", "");
+		if (!orgUrl.contains("://")) {//处理不合法的源地址使其变为合法的
+			orgUrl = BasicUrl + link.attr("href");
 		}
 		return orgUrl;
 	}
@@ -261,18 +260,19 @@ public class ManageNotice {
 	 * @return
 	 */
 	public static Document semanticUI(Document document) {
-		//关键字去除
+		//关键字去除,去除html文档中所有&nbsp,<br>,</br>
 		String tempStr= document.html().replaceAll(";&nbsp|<br>|</br>","");
 		document=Jsoup.parse(tempStr);
 
-		//Bootstrap修饰
+		//Semantic-UI修饰
 		document.getAllElements()
+                //去除原来的表格修饰
 				.removeAttr("style")
 				.removeAttr("width")
 				.removeAttr("height")
 				.removeAttr("align")
 				.removeAttr("border");
-		document.getElementsByTag("table")//把所有的表格全都加上Bootstrap响应式表格
+		document.getElementsByTag("table")//把所有的表格全都加上Semantic-UI响应式表格
 				.addClass("ui")
 				.addClass("table")
 				.addClass("segment");
@@ -282,12 +282,21 @@ public class ManageNotice {
 			one.addClass("ui").addClass("image");//把所有的图片全都加上Bootstrap响应式图片类
 			//图片的URL处理
 			String url=one.attr("src");
-			if (!url.contains("http://")){
+			if (!url.contains("://")){
 				url="http://kyb.ccnu.edu.cn/"+url;
 			}
 			one.attr("src",url);
 		}
 
+        //对html中的所有链接属性分析,如果链接是用的相对链接就加上原网址,如果是觉得链接就不变
+        Elements links=document.getElementsByAttribute("href");
+        for(Element one:links){
+            String url=one.attr("href");
+            if (!url.contains("://")){
+                url="http://kyb.ccnu.edu.cn/"+url;
+            }
+            one.attr("href",url);
+        }
 		return document;
 	}
 
