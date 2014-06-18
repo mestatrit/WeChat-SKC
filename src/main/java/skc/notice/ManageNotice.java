@@ -246,7 +246,7 @@ public class ManageNotice {
 	private static String checkURL(Element link, String BasicUrl) {
 		String orgUrl = link.attr("href");//原地址
 		if (!orgUrl.contains("://")) {//处理不合法的源地址使其变为合法的
-			orgUrl = BasicUrl + link.attr("href");
+			orgUrl = BasicUrl + link.attr("href").replace("..", "");
 		}
 		return orgUrl;
 	}
